@@ -22,19 +22,16 @@ import tensorflow as tf
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',"https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"]
 
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
+app.scripts.config.serve_locally = True
+app.title = 'Twitter Sentiment Monitor'
+
 consumer_key = 'qhwg88DbtCpCG2hQumqSKj3qp'
 consumer_secret = 'BZy237443Jj7hePJvSnRUFMePKCnrXVtEbhzXYQbDEwtUm8LQy'
 access_token = '3315982002-w8V3IgrJWXKjNHuKjqMWOj7dGsTqG2rZaQSl91Y'
 access_token_secret = 'LBkNkwRhZga9O3MokOIClPagFWGBx97DDo6RXvWFwqjrv'
 
-
-#dash
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-app.title = 'Twitter Sentiment Monitor'
-
-server = app.server
-app.scripts.config.serve_locally = True
-#app.scripts.fullscreen=True
 
 app.layout =html.Div(children=[
     html.H1('Twitter Sentiment Analysis ', 
